@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'partials/head.njk' %}
+    </head>
+    <body>
+        {% include 'partials/sidebar.njk' %}
+        <main>
+            {% include 'partials/header.njk' %}
+            <section class="content">
+                {% block content%}{%endblock%}
+                </section>
+                {% include 'partials/footer.njk' %}
+            </main>
+        </body>
+    </html>

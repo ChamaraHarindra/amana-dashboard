@@ -1,0 +1,588 @@
+{% extends 'layouts/default.njk' %}
+{% set Title = 'Overview' %}
+
+{% block content %}
+    <div class="container-fluid my-4">
+        <div class="row mb-4 title">
+            <div class="col-md-12">
+                <div class="c-card summary-card">
+                    <div class="c-card__body">
+                        <div class="row justify-content-md-between align-items-center">
+                            <div class="col-md-auto">
+                                <h1>Sales & Marketing</h1>
+                            </div>
+                            <div class="col-md-auto">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Filter by Channel</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="c-card summary-card">
+                    <div class="c-card__body">
+                        <h2>Summary</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-label">
+                                Year to Date GWP
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">22,364,992.39</span>
+                                <span class="summary-card__item-value percentage percentage--up">8%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card__item mb-0">
+                            <div class="summary-card__item-label">
+                                Month to Date - As at 12/2/2022
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">5,956,903.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="c-card summary-card">
+                    <div class="c-card__body">
+                        <h2>Composition</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-label">
+                                Renewals
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">14.76 m</span>
+                                <span class="summary-card__item-value percentage">66%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card__item mb-0">
+                            <div class="summary-card__item-label">
+                                New Business
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">7.60 m</span>
+                                <span class="summary-card__item-value percentage">34%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="c-card summary-card">
+                    <div class="c-card__body">
+                        <h2>YOY Growth - YTD</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-label">
+                                2021
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">22.36 m</span>
+                                <span class="summary-card__item-value percentage percentage--down">-17%</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="summary-card__item my-0">
+                                <div class="summary-card__item-label">
+                                    2019
+                                </div>
+                                <div class="summary-card__item-value">
+                                    <span class="summary-card__item-value-text">23.19 m</span>
+                                </div>
+                            </div>
+                            <div class="summary-card__item my-0">
+                                <div class="summary-card__item-label">
+                                    2020
+                                </div>
+                                <div class="summary-card__item-value">
+                                    <span class="summary-card__item-value-text">26.91 m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="c-card summary-card">
+                    <div class="c-card__body">
+                        <h2>YOY Growth - Monthwise</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-label">
+                                2021
+                            </div>
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">5.96 m</span>
+                                <span class="summary-card__item-value percentage percentage--down">-47%</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="summary-card__item my-0">
+                                <div class="summary-card__item-label">
+                                    2019
+                                </div>
+                                <div class="summary-card__item-value">
+                                    <span class="summary-card__item-value-text">11.47 m</span>
+                                </div>
+                            </div>
+                            <div class="summary-card__item my-0">
+                                <div class="summary-card__item-label">
+                                    2020
+                                </div>
+                                <div class="summary-card__item-value">
+                                    <span class="summary-card__item-value-text">11.15 m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="c-card">
+                    <div class="c-card__header">Budget Vs GWP - 2021</div>
+                    <div class="c-card__body">
+                        <canvas id="budgetChart" width="100%" height="175"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="c-card">
+                    <div class="c-card__header">Classwise Distribution</div>
+                    <div class="c-card__body">
+                        <canvas id="classwiseDistributionChart" width="100%"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="c-card mb-3">
+                    <div class="c-card__header">External vs. Internal Channel</div>
+                    <div class="c-card__body">
+                        <canvas id="externalVsInternalChart" width="100%" height="500"></canvas>
+                    </div>
+                </div>
+                <div class="c-card summary-card mb-3">
+                    <div class="c-card__body">
+                        <h2>Policy Count</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">18,675</span>
+                                <span class="summary-card__item-value percentage percentage--down">-17%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-card summary-card mb-3">
+                    <div class="c-card__body">
+                        <h2>Lost Business</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">1,978,006</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-card summary-card mb-3">
+                    <div class="c-card__body">
+                        <h2>Avg. Premium Per Policy</h2>
+                        <div class="summary-card__item">
+                            <div class="summary-card__item-value">
+                                <span class="summary-card__item-value-text">6,753</span>
+                                <span class="summary-card__item-value percentage percentage--up">7%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-card summary-card mb-3">
+                    <div class="c-card__body">
+                        <h2>YOY Premium Trend</h2>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="summary-card__item d-flex align-items-center mb-0">
+                                    <div class="summary-card__item-label me-2">
+                                        2020
+                                    </div>
+                                    <div class="summary-card__item-value">
+                                        <span class="summary-card__item-value-text">4,855</span>
+                                    </div>
+                                </div>
+                                <div class="summary-card__item  d-flex align-items-center mb-0">
+                                    <div class="summary-card__item-label me-2">
+                                    2021
+                                </div>
+                                    <div class="summary-card__item-value">
+                                        <span class="summary-card__item-value-text">4,583</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="summary-card__item my-0">
+                                <div class="summary-card__item-value">
+                                    <span class="summary-card__item-value percentage percentage--up">4%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="c-card mb-3">
+                    <div class="c-card__header">External Channels Contribution</div>
+                    <div class="c-card__body">
+                        <canvas id="externalChannelsChart" width="100%"></canvas>
+                    </div>
+                </div>
+                <div class="c-card">
+                    <div class="c-card__header">Internal Channels Contribution</div>
+                    <div class="c-card__body">
+                        <canvas id="internalChannelsChart" width="100%"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="c-card">
+                    <div class="c-card__header">Top 10 Customers by GWP</div>
+                    <div class="c-card__body">
+                        <canvas id="topCustomersChart" width="100%"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="c-card">
+                    <div class="c-card__header">Marketing Executive Goals</div>
+                    <div class="c-card__body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ME</th>
+                                        <th>2020</th>
+                                        <th>2021</th>
+                                        <th>Change +/ - </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ajmal</td>
+                                        <td>0.00 m</td>
+                                        <td>1.32 m</td>
+                                        <td> - </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Imran</td>
+                                        <td>35.02 m</td>
+                                        <td>38.01 m</td>
+                                        <td>
+                                            <span class="percentage percentage--up">9%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CSU</td>
+                                        <td>1.13 m</td>
+                                        <td>2.52 m</td>
+                                        <td>
+                                            <span class="percentage percentage--up">123%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Murshid</td>
+                                        <td>19.22 m</td>
+                                        <td>37.21 m</td>
+                                        <td>
+                                            <span class="percentage percentage--up">94%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mujaahid</td>
+                                        <td>0.00 m</td>
+                                        <td>0.54 m</td>
+                                        <td> - </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# charts #}
+
+        {# chartjs #}
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+        <script>
+            // budget chart
+
+            const budgetChart = new Chart(document.getElementById('budgetChart'), {
+                type: 'bar',
+                data: {
+                    labels: [
+                        '2021 - Budget', '2021 - GWP'
+                    ],
+                    datasets: [
+                        {
+                            label: ['101% Achieved'],
+                            data: [
+                                109.05, 110.58
+                            ],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            // Classwise Distribution chart
+            const classwiseDistributionChartData = {
+                datasets: [
+                    {
+                        label: 'Classwise Share - %',
+                        data: [
+                            {
+                                x: 2,
+                                y: 82,
+                                r: 3
+                            }, {
+                                x: 8,
+                                y: 40,
+                                r: 10
+                            }, {
+                                x: 5,
+                                y: -4,
+                                r: 5
+                            }, {
+                                x: 8,
+                                y: 0,
+                                r: 10
+                            }, {
+                                x: 18,
+                                y: -50,
+                                r: 20
+                            }, {
+                                x: 60,
+                                y: 40,
+                                r: 40
+                            }
+                        ],
+                        backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                    }
+                ]
+            };
+            const classwiseDistributionChart = new Chart(document.getElementById('classwiseDistributionChart'), {
+                type: 'bubble',
+                data: classwiseDistributionChartData
+            });
+
+            // Pie Chart
+            const externalVsInternalChartData = {
+                labels: [
+                    'External 20%', 'Internal 80%'
+                ],
+                datasets: [
+                    {
+                        label: 'My First Dataset',
+                        data: [
+                            20, 80
+                        ],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)', 'rgb(54, 162, 235)'
+                        ],
+                        hoverOffset: 4
+                    }
+                ]
+            };
+            const externalVsInternalChart = new Chart(document.getElementById('externalVsInternalChart'), {
+                type: 'pie',
+                data: externalVsInternalChartData
+            });
+
+            const externalChannelsChartData = {
+                labels: [
+                    'Banca',
+                    'Broker',
+                    'Garage-Agent',
+                    'General Agents',
+                    'ME-agent',
+                    'ME-Banca'
+                ],
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'GWP',
+                        data: [
+                            1.00,
+                            13.00,
+                            1.00,
+                            1.00,
+                            1.00,
+                            1.50
+                        ],
+                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 1
+                    }, {
+                        type: 'line',
+                        label: 'Change -/+',
+                        data: [
+                            12,
+                            19,
+                            21,
+                            0,
+                            29,
+                            61
+                        ],
+                        fill: false,
+                        borderColor: 'rgb(54, 162, 235)'
+                    }
+                ]
+            };
+
+            const externalChannelsChart = new Chart(document.getElementById('externalChannelsChart'), {
+                type: 'scatter',
+                data: externalChannelsChartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            const internalChannelsChartData = {
+                labels: [
+                    'Direct', 'ME', 'Online'
+                ],
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: 'GWP',
+                        data: [
+                            4.00, 29.00, 1.00
+                        ],
+                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 1
+                    }, {
+                        type: 'line',
+                        label: 'Change -/+',
+                        data: [
+                            10, 1, 140
+                        ],
+                        fill: false,
+                        borderColor: 'rgb(54, 162, 235)'
+                    }
+                ]
+            };
+
+            const internalChannelsChart = new Chart(document.getElementById('internalChannelsChart'), {
+                type: 'scatter',
+                data: internalChannelsChartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const topCustomersChart = new Chart(document.getElementById('topCustomersChart'), {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'MALDIVES AIRPOR',
+                        'JOHN KEELLS HOL',
+                        'MALDIVES TRANSP',
+                        'THE RESIDENCE M',
+                        'MALE\' WATER & S',
+                        'OOREDOO MALDIVE',
+                        'MALDIVES ISLAMI',
+                        'MALE\' AERATED W',
+                        'SCUBASPA 2 PVT',
+                        'WALDORF ASTORIA'
+                    ],
+                    datasets: [
+                        {
+                            label: ['101% Achieved'],
+                            data: [
+                                15.73,
+                                9.76,
+                                4.87,
+                                3.55,
+                                2.45,
+                                2.23,
+                                2.00,
+                                1.90,
+                                1.80,
+                                1.70
+                            ],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    barPercentage: 0.5,
+                    indexAxis: 'y',
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each horizontal bar to be 2px wide
+                    elements: {
+                        bar: {
+                            borderWidth: 2
+                        }
+                    },
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            display: false
+                        }
+                    }
+                }
+            });
+        </script>
+    {% endblock %}
