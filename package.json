@@ -28,12 +28,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "cross-env NODE_ENV=production gulp",
-    "build:public": "cross-env NODE_ENV=production gulp public",
-    "build:views": "cross-env NODE_ENV=production gulp views",
-    "build:media": "cross-env NODE_ENV=production gulp media",
-    "build:styles": "cross-env NODE_ENV=production gulp styles",
-    "build:scripts": "cross-env NODE_ENV=production gulp scripts",
+    "build": "gulp build",
     "clean": "gulp clean"
   },
   "dependencies": {
