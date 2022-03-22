@@ -191,9 +191,21 @@
                                     <div class="col-md-auto">
                                         <h1>Sales & Marketing</h1>
                                     </div>
-                                    <div class="col-md-auto">
-                                        <select class="form-select" aria-label="Default select example">
+                                    <div class="col-md-auto d-flex">
+                                        <select class="form-select me-3" aria-label="Default select example">
                                             <option selected>Filter by Channel</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <select class="form-select me-3" aria-label="Default select example">
+                                            <option selected>Filter by Class</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Filter by Date</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -484,8 +496,8 @@
                                 data: [
                                     109.05, 110.58
                                 ],
-                                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-                                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+                                backgroundColor: ['#6BCB77', '#4D96FF'],
+                                borderColor: ['#6BCB77', '#4D96FF'],
                                 borderWidth: 1
                             }]
                         },
@@ -526,7 +538,7 @@
                                 y: 40,
                                 r: 40
                             }],
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                            backgroundColor: '#8843F2'
                         }]
                     };
                     const classwiseDistributionChart = new Chart(document.getElementById('classwiseDistributionChart'), {
@@ -541,7 +553,7 @@
                             data: [
                                 20, 80
                             ],
-                            backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
+                            backgroundColor: ['#9EDE73', '#845EC2'],
                             hoverOffset: 4
                         }]
                     };
@@ -562,8 +574,8 @@
                                 1.00,
                                 1.50
                             ],
-                            borderColor: 'rgb(255, 99, 132)',
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: '#3DB2FF',
+                            backgroundColor: '#3DB2FF',
                             borderWidth: 1
                         }, {
                             type: 'line',
@@ -577,7 +589,7 @@
                                 61
                             ],
                             fill: false,
-                            borderColor: 'rgb(54, 162, 235)'
+                            borderColor: '#AC66CC'
                         }]
                     };
                     const externalChannelsChart = new Chart(document.getElementById('externalChannelsChart'), {
@@ -599,8 +611,8 @@
                             data: [
                                 4.00, 29.00, 1.00
                             ],
-                            borderColor: 'rgb(255, 99, 132)',
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: '#3DB2FF',
+                            backgroundColor: '#3DB2FF',
                             borderWidth: 1
                         }, {
                             type: 'line',
@@ -609,7 +621,7 @@
                                 10, 1, 140
                             ],
                             fill: false,
-                            borderColor: 'rgb(54, 162, 235)'
+                            borderColor: '#AC66CC'
                         }]
                     };
                     const internalChannelsChart = new Chart(document.getElementById('internalChannelsChart'), {
@@ -641,9 +653,8 @@
                                     1.80,
                                     1.70
                                 ],
-                                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)'],
-                                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)'],
-                                borderWidth: 1
+                                backgroundColor: ['#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E', '#8DED8E'],
+                                borderWidth: 0
                             }]
                         },
                         options: {
