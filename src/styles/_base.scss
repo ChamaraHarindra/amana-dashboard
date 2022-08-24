@@ -367,3 +367,10 @@ aside {
     margin: 0;
   }
 }
+
+.modal-dialog {
+  &.fullscreen {
+    max-width: calc(100% - 20px);
+    margin: 20px auto;
+  }
+}

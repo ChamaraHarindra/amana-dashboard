@@ -90,9 +90,9 @@ function html() {
         data: {
           paths: {
             root: "/",
-            scripts: "/scripts",
-            styles: "/styles",
-            media: "/media",
+            scripts: "./scripts",
+            styles: "./styles",
+            media: "./media",
           },
         },
       })
